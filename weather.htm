@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" /><title>WFO TSA RSS Feeds</title><meta name="DC.title" content="WFO TSA RSS Feeds" /><meta name="DC.description" content="WFO TSA RSS Feeds" /><meta name="DC.creator" content="US Department of Commerce, NOAA, National Weather Service" /><meta name="DC.date.created" scheme="ISO8601" content="February 28th 2018 8:21 PM" /><meta name="DC.language" scheme="DCTERMS.RFC1766" content="EN-US" /><meta name="DC.keywords" content="NWS WFO TSA RSS Feeds" /><meta name="DC.publisher" content="NOAA's National Weather Service" /><meta name="DC.contributor" content="National Weather Service" /><meta name="DC.rights" content="http://www.weather.gov/disclaimer.php" /><meta name="rating" content="General" /><meta name="robots" content="index,follow" />
+
+        <link href="/css/weatherstyle.css" rel="stylesheet" type="text/css" />
+        <link href="/css/template.css" rel="stylesheet" type="text/css" />
+        <link href="/css/myfcst.css" rel="stylesheet" type="text/css" />
+        <link href="/css/ForecastSearch.css" rel="stylesheet" type="text/css" />
+        <link href="/css/pointforecast.css" rel="stylesheet" type="text/css" />
+        <link href="/css/jqueryui10_3_1custom/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+        <link href="/css/widgets.css" rel="stylesheet" type="text/css" />
+        <link href="/css/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+        <!-- <script type="text/javascript" src="/js/jquery.mobile-1.4.0.min.js"></script> //-->
+        <script type="text/javascript" src="/js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.hoverIntent.minified.js"></script>
+        <script type="text/javascript" src="/js/ForecastSearch.js"></script>
+        <script type="text/javascript" src="/js/federated-analytics.js"></script>
+        <script type="text/javascript" src="/js/topNavMenu.js"></script>
+        <script type="text/javascript" src="/js/NidsESRI.js"></script>
+        <script type="text/javascript" src="/cfisurvey/cfi.js?v2"></script>
+        <script type="text/javascript" src="/js/widgets.js"></script>
+        <script type="text/javascript" src="/js/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+        <script type="text/javascript" src="/js/nwsexit.js"></script>
+        
+<script>
+// ForeSee Production Embed Script v2.01
+// DO NOT MODIFY BELOW THIS LINE *****************************************
+;(function (g) {
+  var d = document, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0], fsr = 'fsReady',
+  aex = { 
+    "src": "//gateway.foresee.com/sites/weather-gov/production/gateway.min.js",
+    "type": "text/javascript", 
+    "async": "true", 
+    "data-vendor": "fs", 
+    "data-role": "gateway" 
+  };
+  for (var attr in aex) { am.setAttribute(attr, aex[attr]); } h.appendChild(am); g[fsr] || (g[fsr] = function () { var aT = '__' + fsr + '_stk__'; g[aT] = g[aT] || []; g[aT].push(arguments); });
+})(window);
+// DO NOT MODIFY ABOVE THIS LINE *****************************************
+
+// Un-comment out the function below when you are ready to input your variable
+/*fsReady(function() { 
+  FSR.CPPS.set('name','value'); // use single quotes when passing a static-value 
+  FSR.CPPS.set('name2',somevariable); // don't use quotes for a dynamic value 
+  FSR.CPPS.set('name3',othervariable); // add as many CPPs as you like in this way 
+});*/
+</script>
+<script>
+$(document).ready(function() {
+  $('img.nocache').each(function () {
+      var $this = $(this);
+      $this.attr('src', noCache($this.attr('src')));
+  });
+});
+function noCache(url) {
+  return url + (url.indexOf('?') >= 0 ? '&nocache=' : '?') + $.now();
+}
+</script>
+
+</head>
+    
+<body>
+
+  <div class="one-sixth-first" id="sidebar">
+                                    <script type="text/javascript" src="/js/jquery-cookie.js"></script>
+        <script type="text/javascript" src="/js/MyForecastWidget.js"></script>
+        <div id="myfcst-widget">
+            <div id="myfcst">
+                <form id='myfcst-form' action='/widgets/MyForecastWidget.php'>
+                    <span id="myfcst-title">Customize Your <strong>Weather.gov</strong></span>
+                    <span id="myfcst-error"></span>
+                    <div id="myfcst-input-block">
+                        <input type="text" name="myfcst-location-input" id="myfcst-location-input" value="City, ST" /> 
+                        <label for="myfcst-location-input">Enter Your City, ST or ZIP Code</label><br />	
+                        <input type="checkbox" name="myfcst-remember" id="myfcst-remember" />
+                        <label for="myfcst-remember">Remember Me</label> 					
+                    </div>
+                    <div class="myfcst-footer">
+                        <input type="submit" value="Get Weather" id="myfcst-submit" />
+                        <p class="myfcst-policy"><a href="http://www.weather.gov/privacy.php">Privacy Policy</a></p>
+                    </div>
+                </form>
+                <div id="myfcst-fcst"></div>
+                <div id="myfcst-multi-result"></div>
+                <div id="myfcst-loading">LOADING...</div>
+            </div>
+            
+        </div>
+        
+                            
+  </div><!-- end of <div class="one-sixth-first"> -->
+</body>
+</html>
